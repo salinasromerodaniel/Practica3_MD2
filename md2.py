@@ -28,10 +28,9 @@ Sbox = [
 block_size = 16  # 16 bytes or 128 bits
 
 lines = []
-#for line in fileinput.input():
-#    lines.append(line)
-#message = lines[3].strip()
-message = "abcdefghijklmnopqrstuvwxyz"
+for line in fileinput.input():
+    lines.append(line)
+message = lines[3].strip()
 message_bytes = bytearray(message, 'utf-8')
 
 padding = block_size - (len(message_bytes) % block_size)
